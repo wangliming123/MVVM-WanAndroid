@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.activity.SearchActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="@dimen/dp4">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/search_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:translationZ="@dimen/dp4"
+                app:searchIcon="@drawable/ic_search"
+                app:queryBackground="@color/colorPrimaryDark"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp10"
+                android:paddingEnd="@dimen/dp10"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.classic.common.MultipleStatusView
+        android:layout_width="match_parent"
+        android:id="@+id/multiple_status_view"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="vertical"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </com.classic.common.MultipleStatusView>
+
+    <ScrollView
+        android:id="@+id/sv_hot_key"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp10"
+                android:text="@string/str_search_hot_key"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/sp18"
+                android:textColor="@color/black"/>
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/hot_key_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:max_select="1"
+                android:padding="@dimen/dp5"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

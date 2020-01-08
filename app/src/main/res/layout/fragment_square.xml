@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layout_square_article"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/refresh_layout"/>
+
+    <LinearLayout
+        android:id="@+id/layout_share"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:hint="@string/str_article_title"
+            android:maxLength="100"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp5"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"/>
+        <EditText
+            android:id="@+id/et_link"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:hint="@string/str_article_link"
+            android:layout_marginTop="@dimen/dp10"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp5"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_height="@dimen/dp40"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/dp40"
+            android:layout_marginEnd="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30">
+            <Button
+                android:id="@+id/btn_share"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_login_button"
+                android:text="@string/str_share"
+                android:textSize="@dimen/sp18"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_grey_button"
+                android:text="@string/str_cancel"
+                android:textSize="@dimen/sp18"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dp10"
+            android:paddingStart="@dimen/dp40"
+            android:paddingEnd="@dimen/dp20"
+            android:textSize="@dimen/sp12"
+            android:textColor="@color/color_top"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_share"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_margin="@dimen/dp20"
+        app:fabCustomSize="@dimen/dp50"
+        app:elevation="@dimen/dp5"
+        app:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/btn_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

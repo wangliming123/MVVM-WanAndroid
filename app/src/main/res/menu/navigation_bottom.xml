@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="@string/str_home"
+        android:icon="@drawable/ic_home"/>
+
+    <item android:id="@+id/square"
+        android:title="@string/str_square"
+        android:icon="@drawable/ic_square"/>
+
+    <item android:id="@+id/knowledge_tree"
+        android:title="@string/str_knowledge_tree"
+        android:icon="@drawable/ic_knowledge_tree"/>
+
+    <item android:id="@+id/project"
+        android:title="@string/str_project"
+        android:icon="@drawable/ic_project"/>
+
+    <item android:id="@+id/wx_article"
+        android:title="@string/str_wx_article"
+        android:icon="@drawable/ic_we_chat"/>
+
+<!--    <item android:id="@+id/navigation"-->
+<!--        android:title="@string/str_navigation"-->
+<!--        android:icon="@drawable/ic_navigation"/>-->
+
+</menu>

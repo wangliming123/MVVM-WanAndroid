@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/favorites"
+        android:title="@string/str_favorites"/>
+    <item
+        android:id="@+id/todo"
+        android:title="@string/str_todo_list"/>
+<!--    <item-->
+<!--        android:id="@+id/night_mode"-->
+<!--        android:title="@string/str_night_mode"/>-->
+<!--    <item-->
+<!--        android:id="@+id/setting"-->
+<!--        android:title="@string/str_setting"/>-->
+    <item
+        android:id="@+id/about"
+        android:title="@string/str_about"/>
+    <item
+        android:id="@+id/logout"
+        android:title="@string/str_logout"/>
+</menu>

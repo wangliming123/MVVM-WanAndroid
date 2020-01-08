@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layout_todo_list"
+        layout="@layout/refresh_layout"/>
+
+
+    <LinearLayout
+        android:id="@+id/layout_add_todo"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            android:background="@color/white"
+            android:hint="@string/str_title"
+            android:maxLength="100"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp5" />
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp20"
+            android:background="@color/white"
+            android:hint="@string/str_content"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp5" />
+
+        <EditText
+            android:id="@+id/et_date_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp20"
+            android:background="@color/white"
+            android:inputType="date"
+            android:paddingStart="@dimen/dp5"
+            android:paddingEnd="@dimen/dp5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginStart="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_marginEnd="@dimen/dp40"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_add_todo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_login_button"
+                android:text="@string/str_save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_weight="1"
+                android:background="@drawable/shape_grey_button"
+                android:text="@string/str_cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:paddingStart="@dimen/dp40"
+            android:paddingEnd="@dimen/dp20"
+            android:textColor="@color/color_top"
+            android:textSize="@dimen/sp12"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_todo"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dp20"
+        android:src="@drawable/btn_add"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="@dimen/dp5"
+        app:fabCustomSize="@dimen/dp50" />
+
+</RelativeLayout>

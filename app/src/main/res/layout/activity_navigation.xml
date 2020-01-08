@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.NavigationActivity">
+
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <com.classic.common.MultipleStatusView
+        android:layout_width="match_parent"
+        android:id="@+id/multiple_status_view"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_navigation"
+                    android:layout_width="@dimen/dp100"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:scrollbars="none"/>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="@dimen/dp1"
+                    android:layout_toEndOf="@id/rv_navigation"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_navigation_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/divider"
+                    android:scrollbars="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            </RelativeLayout>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </com.classic.common.MultipleStatusView>
+
+</LinearLayout>

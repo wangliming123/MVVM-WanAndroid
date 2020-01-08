@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">WanAndroid</string>
+
+    <string name="str_home">首页</string>
+    <string name="str_wx_article">公众号</string>
+    <string name="str_project">项目</string>
+    <string name="str_square">广场</string>
+    <string name="str_navigation">导航</string>
+    <string name="str_knowledge_tree">体系</string>
+
+    <string name="str_favorites">收藏</string>
+    <string name="str_todo_list">待办清单</string>
+    <string name="str_night_mode">夜间模式</string>
+    <string name="str_setting">设置</string>
+    <string name="str_logout">退出登录</string>
+    <string name="str_about">关于</string>
+    <string name="user_name">用户名</string>
+
+
+    <string name="search">搜索</string>
+    <string name="scan">扫码</string>
+    <string name="str_exit_hint">再按一次退出</string>
+    <string name="str_no_more">没有更多了</string>
+
+    <string name="str_is_loading">正在加载…</string>
+    <string name="no_data">暂无数据 o(╥﹏╥)o \n 点击屏幕重新加载</string>
+    <string name="error_loading">加载失败 o(╥﹏╥)o \n 点击屏幕重新加载</string>
+    <string name="str_top">置顶</string>
+    <string name="str_search_hot_key">搜索热词</string>
+    <string name="str_username">用户名</string>
+    <string name="str_password">密码</string>
+    <string name="str_login">登  录</string>
+    <string name="str_register">注册</string>
+    <string name="str_username_invalid">用户名最少3位</string>
+    <string name="str_password_invalid">密码最少6位</string>
+    <string name="str_collect">收藏</string>
+    <string name="str_article_link">文章链接</string>
+    <string name="str_article_title">文章标题（100字以内）</string>
+    <string name="str_share">分享</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_tip_title_not_empty">文章标题不能为空</string>
+    <string name="str_tip_link_not_empty">链接不能为空</string>
+    <string name="str_tip_link_not_valid">链接必须以http://或者 https://开头</string>
+    <string name="str_finished">已完成</string>
+    <string name="str_todo">待办</string>
+    <string formatted="true" name="str_complete_time">完成: %s</string>
+    <string formatted="true" name="str_date_time">预完成: %s</string>
+    <string name="str_title">标题（必填）</string>
+    <string name="str_content">详情</string>
+
+    <string name="str_tip_todo_title_not_empty">标题不能为空</string>
+    <string name="str_tip_date_not_empty">日期不能为空</string>
+    <string formatted="true" name="str_tip_date_not_valid">日期必需为以下格式: %s</string>
+    <string name="str_save">保存</string>
+    <string formatted="true" name="str_source_code">源码地址:\n%s</string>
+    <string name="str_confirm">确定</string>
+
+</resources>
