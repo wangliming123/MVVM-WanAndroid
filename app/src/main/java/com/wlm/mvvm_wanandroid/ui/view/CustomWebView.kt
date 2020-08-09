@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.core.content.res.ResourcesCompat
 import com.wlm.mvvm_wanandroid.R
 
 
@@ -22,7 +23,8 @@ class CustomWebView : WebView {
     }
 
     constructor(arg0: Context) : super(arg0) {
-        setBackgroundColor(arg0.resources.getColor(R.color.color_bg))
+
+        setBackgroundColor(ResourcesCompat.getColor(arg0.resources, R.color.color_bg, null))
     }
 
     constructor(arg0: Context, arg1: AttributeSet) : super(arg0, arg1) {

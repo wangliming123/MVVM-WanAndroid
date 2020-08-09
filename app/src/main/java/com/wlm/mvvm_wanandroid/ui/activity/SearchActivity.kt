@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.Observer
 import com.classic.common.MultipleStatusView
 import com.orhanobut.logger.Logger
@@ -47,7 +48,7 @@ class SearchActivity : BaseVMActivity<SearchViewModel>() {
     private fun initActionBar() {
         search_toolbar.run {
             setSupportActionBar(search_toolbar)
-            search_toolbar.navigationIcon = resources.getDrawable(R.drawable.arrow_back, null)
+            search_toolbar.navigationIcon = ResourcesCompat.getDrawable(resources, R.drawable.arrow_back, null)
             search_toolbar.setNavigationOnClickListener {
                 if (hasQuery) {
                     multiple_status_view.visibility = View.GONE

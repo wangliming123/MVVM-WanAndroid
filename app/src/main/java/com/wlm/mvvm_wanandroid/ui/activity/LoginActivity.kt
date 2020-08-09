@@ -1,6 +1,7 @@
 package com.wlm.mvvm_wanandroid.ui.activity
 
 import android.view.View
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.Observer
 import com.orhanobut.logger.Logger
 import com.wlm.mvvm_wanandroid.R
@@ -24,7 +25,7 @@ class LoginActivity : BaseVMActivity<LoginViewModel>() {
         super.init()
         initView()
         setSupportActionBar(toolbar)
-        toolbar.navigationIcon = getDrawable(R.drawable.arrow_back)
+        toolbar.navigationIcon = ResourcesCompat.getDrawable(resources, R.drawable.arrow_back, null)
         toolbar.setNavigationOnClickListener { finish() }
     }
 

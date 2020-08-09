@@ -30,7 +30,7 @@
     <string name="str_username">用户名</string>
     <string name="str_password">密码</string>
     <string name="str_login">登  录</string>
-    <string name="str_register">注册</string>
+    <string name="str_register">注  册</string>
     <string name="str_username_invalid">用户名最少3位</string>
     <string name="str_password_invalid">密码最少6位</string>
     <string name="str_collect">收藏</string>

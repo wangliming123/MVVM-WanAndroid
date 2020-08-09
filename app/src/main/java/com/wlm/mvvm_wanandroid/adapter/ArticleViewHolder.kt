@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -54,7 +55,8 @@ class ArticleViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
                 ivPic.visibility = View.VISIBLE
                 Glide.with(context).load(envelopePic).into(ivPic)
             }
-            ivCollect.setImageDrawable(context.getDrawable(if (collect) R.drawable.ic_like else R.drawable.ic_like_normal))
+            ivCollect.setImageDrawable(ResourcesCompat.getDrawable(context.resources,
+                if (collect) R.drawable.ic_like else R.drawable.ic_like_normal, null))
             itemView.setOnClickListener {
                 context.startKtxActivity<BrowserActivity>(value = BrowserActivity.KEY_URL to link)
             }

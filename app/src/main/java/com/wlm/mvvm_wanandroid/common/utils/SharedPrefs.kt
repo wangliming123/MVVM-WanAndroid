@@ -10,6 +10,7 @@ import kotlin.reflect.KProperty
  * @since 2019.11.13
  * kotlin委托属性+SharedPreferences实例
  */
+@Suppress("UNCHECKED_CAST")
 class SharedPrefs<T>(private val name: String, private val default: T) {
     companion object {
         private val file_name = "${MyApp.instance.packageName}_preferences"
@@ -53,7 +54,6 @@ class SharedPrefs<T>(private val name: String, private val default: T) {
         }.apply()
     }
 
-    @Suppress("UNCHECKED_CAST")
     private fun getSharedPreferences(name: String, default: T): T = with(prefs) {
         val res: Any = when (default) {
             is Long -> getLong(name, default)
@@ -86,7 +86,6 @@ class SharedPrefs<T>(private val name: String, private val default: T) {
     /**
      * 反序列化对象
      */
-    @Suppress("UNCHECKED_CAST")
     @Throws(IOException::class, ClassNotFoundException::class)
     private fun <A> deSerialization(str: String): A {
         val redStr = java.net.URLDecoder.decode(str, "UTF-8")

@@ -1,8 +1,7 @@
 package com.wlm.mvvm_wanandroid.base.ui
 
-import android.util.Log
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.classic.common.MultipleStatusView
 import com.orhanobut.logger.Logger
 import com.wlm.mvvm_wanandroid.base.BaseViewModel
@@ -37,7 +36,8 @@ abstract class BaseVMFragment<VM : BaseViewModel> : BaseFragment() {
     }
 
     private fun initVM() {
-        mViewModel = ViewModelProviders.of(this).get(providerVMClass)
+//        mViewModel = ViewModelProviders.of(this).get(providerVMClass)
+        mViewModel = ViewModelProvider(this).get(providerVMClass)
         lifecycle.addObserver(mViewModel)
     }
 

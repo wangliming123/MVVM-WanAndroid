@@ -1,5 +1,6 @@
 package com.wlm.mvvm_wanandroid.ui.activity
 
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
@@ -36,7 +37,7 @@ class TodoActivity : BaseActivity() {
         toolbar.run {
             title = getString(R.string.str_todo_list)
             setSupportActionBar(this)
-            navigationIcon = getDrawable(R.drawable.arrow_back)
+            navigationIcon = ResourcesCompat.getDrawable(resources, R.drawable.arrow_back, null)
             setNavigationOnClickListener { finish() }
         }
     }

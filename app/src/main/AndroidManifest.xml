@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activity.TodoActivity"></activity>
+        <activity android:name=".ui.activity.TodoActivity"/>
         <activity android:name=".ui.activity.NavigationActivity" />
         <activity android:name=".ui.activity.CollectActivity" />
         <activity android:name=".ui.activity.LoginActivity" />

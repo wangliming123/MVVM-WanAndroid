@@ -1,6 +1,7 @@
 package com.wlm.mvvm_wanandroid.ui.activity
 
 import android.graphics.Color
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +40,7 @@ class NavigationActivity : BaseVMActivity<NavigationViewModel>() {
 
         toolbar.title = getString(R.string.str_navigation)
         setSupportActionBar(toolbar)
-        toolbar.navigationIcon = getDrawable(R.drawable.arrow_back)
+        toolbar.navigationIcon = ResourcesCompat.getDrawable(resources, R.drawable.arrow_back, null)
         toolbar.setNavigationOnClickListener { finish() }
 
         initRecycler()

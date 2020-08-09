@@ -1,9 +1,10 @@
 package com.wlm.mvvm_wanandroid.ui.activity
 
 import android.graphics.Bitmap
-import android.util.Log
 import android.view.View
 import android.webkit.*
+import androidx.core.content.res.ResourcesCompat
+import com.orhanobut.logger.Logger
 import com.wlm.mvvm_wanandroid.R
 import com.wlm.mvvm_wanandroid.base.ui.BaseActivity
 import kotlinx.android.synthetic.main.activity_browser.*
@@ -22,7 +23,7 @@ class BrowserActivity : BaseActivity() {
         headerToolbar.title = getString(R.string.str_is_loading)
         headerToolbar.setNavigationIcon(R.drawable.arrow_back)
         headerToolbar.setNavigationOnClickListener { onBackPressed() }
-        progressBar.progressDrawable = resources.getDrawable(R.drawable.color_progressbar)
+        progressBar.progressDrawable = ResourcesCompat.getDrawable(resources, R.drawable.color_progressbar, null)
         initWebView()
 
         loadWebView()
@@ -33,20 +34,26 @@ class BrowserActivity : BaseActivity() {
             webViewClient = object : WebViewClient() {
                 //防止加载网页时调起系统浏览器
                 override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
-                    view.loadUrl(url)
+                    Logger.d("load_url: $url")
+                    url?.let {
+                        if (url.startsWith("http:") || it.startsWith("https:")) {
+                            view.loadUrl(url)
+                            return false
+                        }
+                    }
                     return true
                 }
 
                 override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                     super.onPageStarted(view, url, favicon)
                     progressBar.visibility = View.VISIBLE
-                    Log.e(TAG, "onPageStarted")
+                    Logger.d("onPageStarted")
                 }
 
                 override fun onPageFinished(view: WebView?, url: String?) {
                     super.onPageFinished(view, url)
                     progressBar.visibility = View.GONE
-                    Log.e(TAG, "onPageFinished")
+                    Logger.d("onPageFinished")
                 }
             }
 
@@ -55,12 +62,12 @@ class BrowserActivity : BaseActivity() {
                 override fun onProgressChanged(view: WebView?, newProgress: Int) {
                     super.onProgressChanged(view, newProgress)
                     progressBar.progress = newProgress
-                    Log.e(TAG, newProgress.toString())
+                    Logger.d(newProgress.toString())
                 }
 
                 override fun onReceivedTitle(view: WebView?, title: String?) {
                     super.onReceivedTitle(view, title)
-                    Log.e(TAG, "onReceivedTitle")
+                    Logger.d("onReceivedTitle")
                     title?.let { headerToolbar.title = it }
                 }
             }
@@ -69,7 +76,7 @@ class BrowserActivity : BaseActivity() {
 
     private fun loadWebView() {
         intent?.extras?.getString(KEY_URL).let {
-            Log.d(TAG, "URL: $it")
+            Logger.d("URL: $it")
             webView.loadUrl(it)
 //            webView.loadUrl("https://www.baidu.com")
         }
